@@ -17,7 +17,7 @@ Here are the key addresses and transactions from the successful deployment:
 ### Token Contract
 
 - **ERC20ForSPLMintable Address**: [`0xF1fd1730472288754eaF022491f89b8E879C476D`](https://neon-devnet.blockscout.com/address/0xF1fd1730472288754eaF022491f89b8E879C476D)
-- **Token Mint Transaction**: [`0x413e30683962f0a995b0005c9b738bb700552b9202369bb05c303a9dd4628637`](https://neon-devnet.blockscout.com/tx/0x413e30683962f0a995b0005c9b738bb700552b9202369bb05c303a9dd4628637)
+- **Token Mint**: 0x413e30683962f0a995b0005c9b738bb700552b9202369bb05c303a9dd4628637
 
 ### Test Contract
 
