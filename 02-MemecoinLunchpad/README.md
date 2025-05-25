@@ -1,4 +1,3 @@
-Here's a `README.md` file with all the transaction logs and essential notes from your Hardhat test run, neatly formatted for documentation:
 # 🚀 Godspower MemeLaunchpad Deploy
 
 Welcome to **Godspower MemeLaunchpad** — a fully on-chain memecoin launchpad built on **Neon EVM**, seamlessly integrated with **Solana**.
