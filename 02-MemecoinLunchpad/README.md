@@ -1,122 +1,175 @@
-# 🧪 Week 2 Submission – Memecoin Launchpad on Solana Using Neon EVM
+Here's a `README.md` file with all the transaction logs and essential notes from your Hardhat test run, neatly formatted for documentation:
+# 🚀 Godspower MemeLaunchpad Deploy
 
-This week, I built a fully onchain **Memecoin Launchpad** using Solidity on **Neon EVM**, connected to Solana.
-The launchpad lets anyone run a public token sale, with tokens sold via a bonding curve and liquidity locked on **Raydium DEX**.
+Welcome to **Godspower MemeLaunchpad** — a fully on-chain memecoin launchpad built on **Neon EVM**, seamlessly integrated with **Solana**.
+
+With this platform, anyone can:
+- 🚀 Launch a token sale
+- 💰 Raise SOL
+- 🔐 Instantly lock liquidity on **Raydium DEX**
+
+...all powered by smart contracts.
 
 ---
 
-## ⚙️ Setup I Used
+### 🧠 Why It’s Special
 
-### Environment
+Memecoins go **brrr**, but this time they’re running on **Solana** — using **Solidity**! 😎  
+Enjoy the speed and low fees of Solana, while building with EVM-compatible tools you already know.
 
-* **Neon EVM (Devnet)**
-* **Solana (Devnet)**
-* **Hardhat** for deployment and tests
-* **Node.js** and **npm**
+---
 
-### Steps
+### 🌐 Tech Stack
 
-1. Cloned the base repo:
-   `git clone git@github.com:neonlabsorg/neon-pocs.git`
+- **Solidity**
+- **Neon EVM** (EVM on Solana)
+- **Raydium** (for liquidity)
+- **Hardhat** for development and testing
 
-2. Installed packages:
-   `npm install`
+---
 
-3. Set up `.env` using `.env.example`:
+### 📌 Features
 
-```env
-PRIVATE_KEY_OWNER=evm-wallet-private-key
-PRIVATE_KEY_SOLANA=solana-wallet-private-key
-USER1_KEY=random-32-byte-key
+- Create and manage onchain token sales
+- Automatically handle SOL contributions
+- Lock LP tokens to Raydium via NFT-based vaults
+- Fee collection and claim logic
+- Gas-efficient bonding curve
+
+---
+
+Let the memes flow — transparently, permissionlessly, and on-chain.
+
+---
+
+```markdown
+# MemeLaunchpad Smart Contract Test Logs
+
+This document contains logs of transaction outputs and test status for the `MemeLaunchpad` contract tested on the `neondevnet` network.
+
+---
+
+## 🧪 Test Suite: `test/MemeLaunchpad/MemeLaunchpad.js`
+
+### Network: `neondevnet`
+
+### ✅ BondingCurve Contract Deployed At:
 ```
 
-4. Got test tokens from:
+0x0Fc6Ec7F9F06bd733913C1Fcd10BFc959a1F88DC
 
-* [https://neonfaucet.org](https://neonfaucet.org)
-* [https://faucet.solana.com](https://faucet.solana.com)
-
----
-
-## 🧪 Test Run Output
-
-Here’s what happened when I ran:
-
-```bash
-npx hardhat test test/MemeLaunchpad/MemeLaunchpad.js --network neondevnet
 ```
 
-* `BondingCurve` deployed at:
-  `0x0Fc6Ec7F9F06bd733913C1Fcd10BFc959a1F88DC`
+---
 
-* `MemeLaunchpad` deployed at:
-  `0x519Bf10a916cC2096c1355D73B53e5CCADcDBf0B`
+## ⚙️ MemeLaunchpad Contract Deployment
 
-* `createTokenSale txn` deployed at:
-  `0x792c31bcfa03c6aab6f82067250edfcfd9dd6684aa10bd5c30d6a5fa9c0c1b43`
+### ✅ MemeLaunchpad Deployed At:
+```
 
-* `createTokenSale txn signature` deployed at:
-  `MAzhNwzcyURB53mypgmFNutYkuZs5sARaKbZxKZjRQaMEELyyt9PjL3UXBf8znjRUGcBxXnCqtwBVBYLsnWtcFF`
+0x01D16927d2968ff1b52B6779177beCA56c12F66c
 
-* `claimTokenSaleFee txn` deployed at:
-  `0x91377485736d278787bd926d569cb6a92d36f05a4cb083049f33b7d6ea826b2d`
-
-### Sale Lifecycle Steps
-
-1. **Token Sale Created**
-
-   * Used bonding curve
-   * Set funding goal to 0.1 SOL
-   * ATA accounts created for:
-     `So11111111111111111111111111111111111111112` and `6dPwA9WEfoxCdrW59HFemo2uJhQd1fwSqAdittXV9pzb`
-
-2. **First Buy**
-
-   * Sent 0.01 SOL
-   * Below goal, sale still active
-
-3. **Second Buy**
-
-   * Sent 0.15 SOL
-   * Goal reached
-   * Triggered pool creation
-
-4. **Liquidity Locked**
-
-   * Raydium CPMM pool created
-   * NFT minted to represent LP lock
-
-5. **Fee Collection**
-
-   * Simulated pool swaps
-   * Collected fees via `collectPoolFees()`
+```
 
 ---
 
-## 🔍 What I Learned
+## 🧪 Test Cases & Transaction Logs
 
-* How to build bonding curve logic in Solidity
-* How to use precompiled contracts like `ICallSolana`
-* How EVM can call Solana programs like Raydium
-* How to handle WSOL deposits and ATA creation
-* How Neon abstracts Solana complexities into Solidity calls
+### ✔ `createTokenSale`
+**Tx Hash:**
+```
+
+0x859dbd1c986e36b689b5f9d1a6420143449bd5606998c980f6ac9c0b163e6742
+
+```
+
+**Info:**
+- Creating ATA accounts for the following SPL Tokens:
+  - `So11111111111111111111111111111111111111112`
+  - `6NJR5gcGP15ZFeSQUupckRAiWw2pJaYPj5fZAZKT9uXV`
+
+**Tx Signature:**
+```
+
+osCbpKKBPMGoWK35vBoZu9bWcMwMiiS886ZMzFHDijnofdcgx6LwhxzF2gP4ATFwLVtce6yjzcd4q7pX9SLseAb
+
+```
 
 ---
 
-## 📁 Contracts I Worked With
+### ✔ `buy (not reaching the fundingGoal)`
+**Tx Hash:**
+```
 
-* `/contracts/BondingCurve.sol`
-* `/contracts/MemeLaunchpad.sol`
+0xa243cd718cfa3ac26744ffa129954d2c77d8f1e187732c7b15baa7243141039f
 
-## 📄 Test Script
-
-* `/test/MemeLaunchpad/MemeLaunchpad.js`
+```
 
 ---
 
-## 🏁 Task Completed
+### ❌ `buy (reaching the fundingGoal)`
+**Tx Hash:**
+```
 
-✅ Built and tested the Memecoin Launchpad
-✅ Connected EVM contracts to Solana programs
-✅ Created and locked liquidity on Raydium
-✅ Used composability features from Neon EVM
-✅ Collected fees through pool trading activity
+0x6a90afe1033fdc30f93e4dcf8d88d43f4780b50733956acc159f85258ddf33ba
+
+```
+
+**Raydium Pool ID Account:**
+```
+
+F7tvUa55uR6Jj2nEa9LSFQ4pR1BRFMXqK9s9P4zrQ612
+
+```
+
+**Locked LP Amount:**
+```
+
+14142135523
+
+```
+
+**NFT Account Holding Locked LP:**
+```
+
+ANnSNRdX2RRVq1NWyTxpdgXF3qEbNS2HfF9oGHHqMXud
+
+```
+
+---
+
+### ✔ `claimTokenSaleFee`
+**Tx Hash:**
+```
+
+0x7ee69fd0cc0449b1f125a80813292ece52cd140cc797f8780b75b076b7d16b38
+
+```
+
+**Simulated Raydium Swap Input:**
+```
+
+F7tvUa55uR6Jj2nEa9LSFQ4pR1BRFMXqK9s9P4zrQ612
+
+```
+
+
+
+---
+
+### ✔ `collectPoolFees`
+**Tx Hash:**
+```
+
+0x86df88e191438ac5be07a472da0124bd49737a340645859f042090ae291d8344
+
+```
+
+**Tx ID:**
+```
+
+2RzmxMgQ6vS1wQbv3D4f3Mta6hATKraXHGndCtaQ9G2NMwKUJtz4egbKUQjbCrHqxnySJx6EoKZRRVrdHaJNnRVQ
+
+````
+
+---

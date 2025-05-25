@@ -61,8 +61,8 @@ describe('Test init', async function () {
     describe('MemeLaunchpad tests', function() {
         it('createTokenSale', async function () {
             let tx = await MemeLaunchpad.createTokenSale(
-                "MIDE" + Date.now().toString(),
-                "MIDE",
+                "GODSPOWER" + Date.now().toString(),
+                "Godspower",
                 9,
                 100000000, // 0.1 SOL sale cap
                 ethers.parseUnits('2000', 9),
